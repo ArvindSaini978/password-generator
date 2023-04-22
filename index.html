@@ -13,21 +13,20 @@
     <div class="container">
         <span class="title">Password Generator</span>
         <div class="passContainer">
-            <div class="pass">This is the password.</div>
+            <div class="pass">Please generate Password.</div>
             <div class="pass-overlay"># # # # # # # # # # # # </div>
             <div class="showPass"><img src="./show.png" alt=""></div>
         </div>
         <div class="options">
-            <form>
+            <form method="post" onsubmit="generatePassword(event)">
                 <div class="option">
                     <label for="passLength">Length of the password:</label>
-                    <input type="number" name="passLength" id="passLength" min="5" value="8" max="42">
+                    <input type="number" name="passLength" id="passLength" min="5" value="12" max="42">
                 </div>
                 <div class="option">
                     <label for="uppercase">I want to include UPPERCASE alphabets.</label>
-                    <!-- <input type="checkbox" name="uppercase" id="uppercase" value="on" checked> -->
                     <div class="checkbox-wrapper-31">
-                        <input type="checkbox" name="uppercase" id="uppercase" value="on" checked>
+                        <input type="checkbox" name="uppercase" id="uppercase" checked>
                         <svg viewBox="0 0 35.6 35.6">
                             <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
                             <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
@@ -37,9 +36,8 @@
                 </div>
                 <div class="option">
                     <label for="lowercase">I want to include lowercase alphabets.</label>
-                    <!-- <input type="checkbox" name="lowercase" id="lowercase" value="on" checked> -->
                     <div class="checkbox-wrapper-31">
-                        <input type="checkbox" name="lowercase" id="lowercase" value="on" checked>
+                        <input type="checkbox" name="lowercase" id="lowercase" checked>
                         <svg viewBox="0 0 35.6 35.6">
                             <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
                             <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
@@ -49,9 +47,8 @@
                 </div>
                 <div class="option">
                     <label for="number">I want to include numbers.</label>
-                    <!-- <input type="checkbox" name="number" id="number" value="on" checked> -->
                     <div class="checkbox-wrapper-31">
-                        <input type="checkbox" name="number" id="number" value="on" checked>
+                        <input type="checkbox" name="number" id="number" checked>
                         <svg viewBox="0 0 35.6 35.6">
                             <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
                             <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
@@ -61,9 +58,8 @@
                 </div>
                 <div class="option">
                     <label for="special">I want to include special characters.</label>
-                    <!-- <input type="checkbox" name="special" id="special" value="on" checked> -->
                     <div class="checkbox-wrapper-31">
-                        <input type="checkbox" name="special" id="special" value="on" checked>
+                        <input type="checkbox" name="special" id="special" checked>
                         <svg viewBox="0 0 35.6 35.6">
                             <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
                             <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
@@ -71,9 +67,10 @@
                         </svg>
                     </div>
                 </div>
-                <button type="submit" class="submit">Generate Password</button>
-            </form>
         </div>
+        <button type="submit" class="submit">Generate Password</button>
+        </form>
+    </div>
     </div>
 </body>
 <script src="./script.js"></script>
