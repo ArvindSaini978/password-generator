@@ -17,6 +17,23 @@ const capitalLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const numberLetters = "1234567890";
 const specialCharacters = "!@#$%^&*()-_`~";
 
+window.onload = () => {
+    if (window.innerWidth < 440) {
+        passOverlay.innerHTML = "# # # # # # # # #"
+    }
+    else {
+        passOverlay.innerHTML = "# # # # # # # # # # # #"
+    }
+}
+window.onresize = () => {
+    if (window.innerWidth < 440) {
+        passOverlay.innerHTML = "# # # # # # # # #"
+    }
+    else {
+        passOverlay.innerHTML = "# # # # # # # # # # # #"
+    }
+}
+
 passLengthBox.addEventListener('input', (e) => {
     passLength = +e.target.value;
 })
@@ -51,10 +68,10 @@ const getCheckboxValue = async () => {
 const showHidePassword = async () => {
     passOverlay.classList.toggle('show-hide')
     if (passOverlay.matches('.show-hide')) {
-        togglePassImg.src = "./hide.png"
+        togglePassImg.src = "./static/images/hide.png"
     }
     else {
-        togglePassImg.src = "./show.png"
+        togglePassImg.src = "./static/images/show.png"
     }
 }
 togglePassImg.addEventListener('click', showHidePassword)

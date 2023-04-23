@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./static/css/style.css">
 </head>
 
 <body>
@@ -14,8 +14,8 @@
         <span class="title">Password Generator</span>
         <div class="passContainer">
             <div class="pass">Please generate Password.</div>
-            <div class="pass-overlay"># # # # # # # # # # # # </div>
-            <div class="showPass"><img src="./show.png" alt=""></div>
+            <div class="pass-overlay"># # # # # # # # #</div>
+            <div class="showPass"><img src="./static/images/show.png" alt=""></div>
         </div>
         <div class="options">
             <form method="post" onsubmit="generatePassword(event)">
@@ -67,12 +67,12 @@
                         </svg>
                     </div>
                 </div>
+                <button type="submit" class="submit">Generate Password</button>
+            </form>
         </div>
-        <button type="submit" class="submit">Generate Password</button>
-        </form>
     </div>
     </div>
 </body>
-<script src="./script.js"></script>
+<script src="./static/script/script.js"></script>
 
 </html>
