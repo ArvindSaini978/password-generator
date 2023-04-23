@@ -50,7 +50,80 @@ body {
     padding: 20px 20px 32px 20px;
     box-shadow: 0px 8px 21px -6px rgb(234 75 75 / 64%);
 }
-
+.alert-conc{
+    position: fixed;
+    top: -6px;
+    left: auto;
+    right: auto;
+    z-index: 999;
+    transition: all 0.5s ease;
+    transform: rotate3d(90, 0, 0, 90deg);
+    transform-origin: top;
+    width: 400px;
+}
+.alert{
+    margin-top: 32px;
+    border-left: 5px solid red;
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    background-color: #e1ffa9;
+    box-shadow: 2px 7px 14px 1px #ffc5c5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Dank-Mono-Regular;
+    padding: 5px 16px;
+    transition: all 0.4s ease;
+}
+.alert::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 42px;
+    background-color: red;
+    width: 2px;
+    height: 43px;
+}
+.alert::after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 42px;
+    background-color: red;
+    width: 2px;
+    height: 43px;
+}
+.dot-l{
+    content: "";
+    position: absolute;
+    top: 38px;
+    left: 37px;
+    background-color: #ff8080;
+    width: 12px;
+    height: 12px;
+    border-radius: 99px;
+    z-index: 999;
+}
+.dot-r{
+    content: "";
+    position: absolute;
+    top: 38px;
+    right: 37px;
+    background-color: #ff8080;
+    width: 12px;
+    height: 12px;
+    border-radius: 99px;
+    z-index: 999;
+}
+.show-alert{
+    transform: rotate3d(0, 0, 0, 0deg);
+}
+.active-alert{
+    background-color: #e8ffbd;
+    align-items: end;
+    line-height: 2;
+}
 .title {
     font-size: 36px;
     font-family: Harlow-Solid, sans-serif;
@@ -422,7 +495,9 @@ input[type="checkbox"] {
     .container {
         width: 95%;
     }
-
+    .alert-conc{
+        width: 90%;
+    }
     .title {
         font-size: 28px;
     }
@@ -458,13 +533,40 @@ input[type="checkbox"] {
         width: 45px;
     }
 }
-
+@media only screen and (max-width:393px) {
+    .alert-conc{
+        width: 90%;
+    }
+    .active-alert-font{
+        align-items: end;
+        line-height: 1.25;
+        height: 64px;
+    }
+}
 @media only screen and (max-width:350px) {
+    .alert-conc{
+        width: 90%;
+    }
+    .active-alert-font{
+        align-items: end;
+        line-height: 1.25;
+        height: 64px;
+    }
     .option label {
         font-size: 16px;
     }
     .showPass{
         width: 40px;
+    }
+}
+@media only screen and (max-width:320px) {
+    .alert-conc{
+        width: 90%;
+    }
+    .active-alert-font{
+        align-items: end;
+        line-height: 1.25;
+        height: 64px;
     }
 }
 

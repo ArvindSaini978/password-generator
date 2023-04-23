@@ -7,6 +7,8 @@ const uppercaseBox = document.getElementById('uppercase');
 const lowercaseBox = document.getElementById('lowercase');
 const numberBox = document.getElementById('number');
 const specialBox = document.getElementById('special');
+const alertCon = document.querySelector('.alert-conc');
+const Alert = document.querySelector('.alert');
 let passLength = 12;
 let uppercaseInclude = false;
 let lowercaseInclude = false;
@@ -214,7 +216,18 @@ const generatePassword = async (e) => {
     e.preventDefault();
     let password = await createPassword();
     if (password == false) {
-        alert("Please select at lease one checkbox.")
+        Alert.innerHTML = `
+    <div class="dot-l"></div>
+    <div class="dot-r"></div>
+    Please select at least one checkbox.`
+        alertCon.classList.add('show-alert');
+        Alert.classList.add('active-alert');
+        Alert.classList.add('active-alert-font');
+        setTimeout(() => {
+            alertCon.classList.remove('show-alert');
+            Alert.classList.remove('active-alert');
+            Alert.classList.remove('active-alert-font');
+        }, 2000);
         return;
     }
     else if (password.length < passLength) {
@@ -238,22 +251,52 @@ const generatePassword = async (e) => {
 
 
 // DISABLE DEVELOPER TOOL FOR REGULAR USERS
-// window.oncontextmenu = function () {
-//     return false;
-// };
-// document.addEventListener("keydown", function (event) {
-//     var key = event.keyCode;
-//     if (key == 123) {
-//         event.preventDefault();
-//         alert("Developer tools are turned off")
-//         return false;
-//     } else if ((event.ctrlKey && event.shiftKey && key == 73) || (event.ctrlKey && event.shiftKey && key == 74)) {
-//         event.preventDefault();
-//         alert("Developer tools are turned off")
-//         return false;
-//     }
-//     else if (event.ctrlKey && key == 85) {
-//         event.preventDefault();
-//         console.log("inspect source");
-//     }
-// }, false);
+window.oncontextmenu = function () {
+    Alert.innerHTML = `
+    <div class="dot-l"></div>
+    <div class="dot-r"></div>
+    Right click is disabled.`
+    alertCon.classList.add('show-alert');
+    Alert.classList.add('active-alert');
+    setTimeout(() => {
+        alertCon.classList.remove('show-alert');
+        Alert.classList.remove('active-alert');
+    }, 2000);
+    return false;
+};
+document.addEventListener("keydown", function (event) {
+    var key = event.keyCode;
+    Alert.innerHTML = `
+    <div class="dot-l"></div>
+    <div class="dot-r"></div>
+    Dev tools are disabled.`
+    if (key == 123) {
+        event.preventDefault();
+        alertCon.classList.add('show-alert');
+        Alert.classList.add('active-alert');
+        setTimeout(() => {
+            alertCon.classList.remove('show-alert');
+            Alert.classList.remove('active-alert');
+        }, 2000);
+        return false;
+    } else if ((event.ctrlKey && event.shiftKey && key == 73) || (event.ctrlKey && event.shiftKey && key == 74)) {
+        event.preventDefault();
+        alertCon.classList.add('show-alert');
+        Alert.classList.add('active-alert');
+        setTimeout(() => {
+            alertCon.classList.remove('show-alert');
+            Alert.classList.remove('active-alert');
+        }, 2000);
+        return false;
+    }
+    else if (event.ctrlKey && key == 85) {
+        event.preventDefault();
+        alertCon.classList.add('show-alert');
+        Alert.classList.add('active-alert');
+        setTimeout(() => {
+            alertCon.classList.remove('show-alert');
+            Alert.classList.remove('active-alert');
+        }, 2000);
+        return false;
+    }
+}, false);
