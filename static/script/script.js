@@ -74,7 +74,7 @@ const showHidePassword = async () => {
         togglePassImg.src = "./static/images/show.png"
     }
 }
-togglePassImg.addEventListener('click', showHidePassword)
+togglePass.addEventListener('click', showHidePassword);
 
 const getRandamCharacter = async () => {
     let randLower = smallLetters[(Math.round((Math.random()) * (smallLetters.length)))];
@@ -229,9 +229,7 @@ const generatePassword = async (e) => {
         }
     }
     let finalpassword = password.slice(0, passLength);
-    console.log(finalpassword, finalpassword.length);
     // adding password to website
     passwordBox.innerHTML = finalpassword;
-    console.log('password box innerHTML = ', passwordBox.innerHTML);
 
 }
