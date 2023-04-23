@@ -17,6 +17,7 @@ const capitalLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const numberLetters = "1234567890";
 const specialCharacters = "!@#$%^&*()-_`~";
 
+
 window.onload = () => {
     if (window.innerWidth < 440) {
         passOverlay.innerHTML = "# # # # # # # # #"
@@ -233,3 +234,26 @@ const generatePassword = async (e) => {
     passwordBox.innerHTML = finalpassword;
 
 }
+
+
+
+// DISABLE DEVELOPER TOOL FOR REGULAR USERS
+// window.oncontextmenu = function () {
+//     return false;
+// };
+// document.addEventListener("keydown", function (event) {
+//     var key = event.keyCode;
+//     if (key == 123) {
+//         event.preventDefault();
+//         alert("Developer tools are turned off")
+//         return false;
+//     } else if ((event.ctrlKey && event.shiftKey && key == 73) || (event.ctrlKey && event.shiftKey && key == 74)) {
+//         event.preventDefault();
+//         alert("Developer tools are turned off")
+//         return false;
+//     }
+//     else if (event.ctrlKey && key == 85) {
+//         event.preventDefault();
+//         console.log("inspect source");
+//     }
+// }, false);
