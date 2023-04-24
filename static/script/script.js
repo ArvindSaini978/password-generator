@@ -27,6 +27,20 @@ window.onload = () => {
     else {
         passOverlay.innerHTML = "# # # # # # # # # # # #"
     }
+    setTimeout(() => {
+        Alert.innerHTML = `
+     <div class="dot-l"></div>
+     <div class="dot-r"></div>
+     Click on '###...' to copy password.`
+    alertCon.classList.add('show-alert');
+    Alert.classList.add('active-alert');
+    Alert.classList.add('active-alert-font');
+    setTimeout(() => {
+        alertCon.classList.remove('show-alert');
+        Alert.classList.remove('active-alert');
+        Alert.classList.remove('active-alert-font');
+    }, 3000);
+    }, 1000);
 }
 window.onresize = () => {
     if (window.innerWidth < 440) {
@@ -245,8 +259,46 @@ const generatePassword = async (e) => {
     let finalpassword = password.slice(0, passLength);
     // adding password to website
     passwordBox.innerHTML = finalpassword;
-
+    Alert.innerHTML = `
+     <div class="dot-l"></div>
+     <div class="dot-r"></div>
+     Password generated.`
+    alertCon.classList.add('show-alert');
+    Alert.classList.add('active-alert');
+    setTimeout(() => {
+        alertCon.classList.remove('show-alert');
+        Alert.classList.remove('active-alert');
+    }, 2000);
 }
+// copy password on clicking '########'
+const copyToClipboard = ()=>{
+    if (passwordBox.innerText!="") {
+        navigator.clipboard.writeText(passwordBox.innerText);
+        Alert.innerHTML = `
+        <div class="dot-l"></div>
+        <div class="dot-r"></div>
+        Password copied.`
+        alertCon.classList.add('show-alert');
+        Alert.classList.add('active-alert');
+        setTimeout(() => {
+            alertCon.classList.remove('show-alert');
+            Alert.classList.remove('active-alert');
+        }, 2000);
+    }else{
+        Alert.innerHTML = `
+        <div class="dot-l"></div>
+        <div class="dot-r"></div>
+        Please generate password.`
+        alertCon.classList.add('show-alert');
+        Alert.classList.add('active-alert');
+        setTimeout(() => {
+            alertCon.classList.remove('show-alert');
+            Alert.classList.remove('active-alert');
+        }, 2000);
+    }
+}
+passOverlay.addEventListener("click", copyToClipboard);
+passwordBox.addEventListener("click", copyToClipboard);
 
 
 
