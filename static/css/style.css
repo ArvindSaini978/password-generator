@@ -7,6 +7,7 @@
     font-family: Dank-Mono-Regular;
     src: url(../font/Dank_Mono_Regular.otf);
 }
+
 @font-face {
     font-family: Harlow-Solid;
     src: url(../font/HARLOWSI.TTF);
@@ -50,7 +51,8 @@ body {
     padding: 20px 20px 32px 20px;
     box-shadow: 0px 8px 21px -6px rgb(234 75 75 / 64%);
 }
-.alert-conc{
+
+.alert-conc {
     position: fixed;
     top: -6px;
     left: auto;
@@ -61,7 +63,8 @@ body {
     transform-origin: top;
     width: 400px;
 }
-.alert{
+
+.alert {
     margin-top: 32px;
     border-left: 5px solid red;
     border-radius: 10px;
@@ -76,7 +79,8 @@ body {
     padding: 5px 16px;
     transition: all 0.4s ease;
 }
-.alert::before{
+
+.alert::before {
     content: "";
     position: absolute;
     top: 0px;
@@ -85,7 +89,8 @@ body {
     width: 2px;
     height: 43px;
 }
-.alert::after{
+
+.alert::after {
     content: "";
     position: absolute;
     top: 0px;
@@ -94,7 +99,8 @@ body {
     width: 2px;
     height: 43px;
 }
-.dot-l{
+
+.dot-l {
     content: "";
     position: absolute;
     top: 38px;
@@ -105,7 +111,8 @@ body {
     border-radius: 99px;
     z-index: 999;
 }
-.dot-r{
+
+.dot-r {
     content: "";
     position: absolute;
     top: 38px;
@@ -116,14 +123,17 @@ body {
     border-radius: 99px;
     z-index: 999;
 }
-.show-alert{
+
+.show-alert {
     transform: rotate3d(0, 0, 0, 0deg);
 }
-.active-alert{
+
+.active-alert {
     background-color: #e8ffbd;
     align-items: end;
     line-height: 2;
 }
+
 .title {
     font-size: 36px;
     font-family: Harlow-Solid, sans-serif;
@@ -212,7 +222,8 @@ body {
     transition: all 0.05s ease-out;
     cursor: pointer;
 }
-.showPass:hover{
+
+.showPass:hover {
     background-color: #fbf6f6;
 }
 
@@ -260,6 +271,9 @@ input[type="number"] {
     padding: 4px 10px;
     border-radius: 4px;
 }
+input[type="number"]::selection {
+    background-color: rgb(255, 46, 46);
+}
 
 input[type="checkbox"] {
     width: 20px;
@@ -283,28 +297,32 @@ input[type="checkbox"] {
     color: white;
     word-spacing: 2.5px;
     border: none;
-    transition: all 0.4s ease-in;
+    transition: all 0.2s ease-in;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    user-select: none;
 }
 
-.submit:hover {
-    background-color: #ff0000df;
-    color: white;
-    box-shadow: 0px 15px 20px rgba(229, 46, 46, 0.4);
-    transform: translateY(-7px);
-}
+@media screen and (min-width:868px) {
+    .submit {
+        transition: all 0.4s ease-in;
+    }
 
-.submit:focus {
-    background-color: #ff0000df;
-    color: white;
-    box-shadow: 0px 15px 20px rgba(229, 46, 46, 0.4);
-    transform: translateY(-7px);
+    .submit:hover {
+        background-color: #ff0000df;
+        color: white;
+        box-shadow: 0px 15px 20px rgba(229, 46, 46, 0.4);
+        transform: translateY(-7px);
+    }
+
+    .submit:active {
+        transform: translateY(-1px);
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    }
 }
 
 .submit:active {
-    transform: translateY(-1px);
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
 }
 
 .checkbox-wrapper-31 {
@@ -380,6 +398,7 @@ input[type="checkbox"] {
 .checkbox-wrapper-31:hover {
     border: 1px solid rgb(155, 2, 2);
 }
+
 @media only screen and (max-width:1280px) {
     .container {
         width: 60%;
@@ -495,9 +514,11 @@ input[type="checkbox"] {
     .container {
         width: 95%;
     }
-    .alert-conc{
+
+    .alert-conc {
         width: 90%;
     }
+
     .title {
         font-size: 28px;
     }
@@ -529,41 +550,50 @@ input[type="checkbox"] {
     .submit {
         font-size: 16px;
     }
-    .showPass{
+
+    .showPass {
         width: 45px;
     }
 }
+
 @media only screen and (max-width:393px) {
-    .alert-conc{
+    .alert-conc {
         width: 90%;
     }
-    .active-alert-font{
+
+    .active-alert-font {
         align-items: end;
         line-height: 1.25;
         height: 64px;
     }
 }
+
 @media only screen and (max-width:350px) {
-    .alert-conc{
+    .alert-conc {
         width: 90%;
     }
-    .active-alert-font{
+
+    .active-alert-font {
         align-items: end;
         line-height: 1.25;
         height: 64px;
     }
+
     .option label {
         font-size: 16px;
     }
-    .showPass{
+
+    .showPass {
         width: 40px;
     }
 }
+
 @media only screen and (max-width:320px) {
-    .alert-conc{
+    .alert-conc {
         width: 90%;
     }
-    .active-alert-font{
+
+    .active-alert-font {
         align-items: end;
         line-height: 1.25;
         height: 64px;
