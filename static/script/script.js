@@ -1,3 +1,4 @@
+const loader = document.getElementById("loader");
 const passwordBox = document.querySelector('.pass');
 const togglePass = document.querySelector('.showPass');
 const passOverlay = document.querySelector('.pass-overlay');
@@ -21,6 +22,8 @@ const specialCharacters = "!@#$%^&*()-_`~";
 
 
 window.onload = () => {
+        document.body.style.overflow = "auto";
+        loader.style.display = "none";
     if (window.innerWidth < 440) {
         passOverlay.innerHTML = "# # # # # # # # #"
     }
@@ -40,7 +43,7 @@ window.onload = () => {
         Alert.classList.remove('active-alert');
         Alert.classList.remove('active-alert-font');
     }, 3000);
-    }, 1000);
+    }, 1500);
 }
 window.onresize = () => {
     if (window.innerWidth < 440) {
